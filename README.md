@@ -111,3 +111,4 @@ To run your chosen script, use the command: streamlit run your_preference.py.
 
 If you decide to run the API version, go to the environment variables and set your OpenAI API key.
 
+![Example(?)](https://github.com/ctokx/transcribeandsummarize/blob/main/example.png?raw=true "Elon Musk")
