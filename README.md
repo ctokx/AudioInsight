@@ -81,6 +81,7 @@ This document outlines the main differences between two approaches for audio tra
 | **Operational Costs** | Minimized, as it avoids API usage fees.       | Potentially higher due to API usage fees.     |
 | **Computational Resources** | Requires significant computational resources for optimal performance, especially for processing large audio files. | Computational load is offloaded to OpenAI's servers. Local resources are less of a concern. |
 | **Data Privacy**      | Data is processed locally, offering potentially higher privacy and security. | Data is sent to and processed by external servers, which may raise privacy concerns. |
+| **Flexibility**       | No flexibility in changing models or utilizing advanced language models for summarization. | Flexibility to change models (e.g., upgrading to GPT-4 for extremely valuable summaries) is available. However, check the costs on the OpenAI website before proceeding. |
 
 ## When to Use Each
 
