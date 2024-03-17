@@ -1,5 +1,4 @@
-
-#Simple Audio Transcription and Summarization App
+# Simple Audio Transcription and Summarization App
 
 This application is designed to transcribe and summarize audio files using Whisper and Hugging Face's transformers. It's built with Streamlit, making it easy to deploy as a web app. Here's how it works and how you can set it up.
 
@@ -42,7 +41,7 @@ pip install -U openai-whisper
 pip install git+https://github.com/openai/whisper.git
 pip install --upgrade --no-deps --force-reinstall git+https://github.com/openai/whisper.git
 
-# FFmpeg Installation
+### FFmpeg Installation
 
 FFmpeg is required for audio processing. Install it according to your operating system:
 
@@ -55,7 +54,7 @@ sudo apt update && sudo apt install ffmpeg
 ```shell
 choco install ffmpeg
 
-###Usage
+### Usage
 - Open the Streamlit app in your web browser.
 - Upload an audio file in WAV, MP3, or OGG format.
 - Wait for the app to transcribe and summarize the audio file.
