@@ -73,39 +73,36 @@ This document outlines the main differences between two approaches for audio tra
 
 ## Technical Differences
 
-### Transcription
-
-- **local.py**: The transcription is performed using a local implementation of the Whisper model. This approach does not require internet connectivity and avoids API usage costs but might be limited by the computational resources of the local machine.
-  
-- **api.py**: Transcription is handled through OpenAI's API, using the Whisper model. This method benefits from potentially more updated models and offloads computational requirements to OpenAI's servers, at the cost of API usage fees and the need for internet connectivity.
-
-### Summarization
-
-- **local.py**: Summarization is conducted using the Transformers library, typically with models like BART or T5. While effective, the quality and capabilities of the summarization depend on the specific pre-trained model used and its alignment with the content being summarized.
-  
-- **api.py**: Utilizes OpenAI's GPT-3.5 model via the API for summarization, providing access to one of the most advanced language models available. This can result in more coherent, contextually relevant summaries, especially for complex or nuanced content.
+| Feature               | local.py                                      | api.py                                        |
+|-----------------------|-----------------------------------------------|-----------------------------------------------|
+| **Transcription**     | Uses a local implementation of the Whisper model. Does not require internet connectivity. May be limited by the computational resources of the local machine. | Transcription through OpenAI's API, using the Whisper model. Benefits from updated models and offloads computational load to OpenAI's servers. Requires internet connectivity. |
+| **Summarization**     | Summarization with the Transformers library, typically with models like BART or T5. Quality depends on the specific pre-trained model used. | Summarization utilizes OpenAI's GPT-3.5 model via the API, providing access to advanced language models for coherent, contextually relevant summaries. |
+| **Internet Connectivity** | Not required.                                  | Required for API access.                       |
+| **Operational Costs** | Minimized, as it avoids API usage fees.       | Potentially higher due to API usage fees.     |
+| **Computational Resources** | Requires significant computational resources for optimal performance, especially for processing large audio files. | Computational load is offloaded to OpenAI's servers. Local resources are less of a concern. |
+| **Data Privacy**      | Data is processed locally, offering potentially higher privacy and security. | Data is sent to and processed by external servers, which may raise privacy concerns. |
 
 ## When to Use Each
 
 ### Use `local.py` when:
-
-- Working offline or in environments with restricted internet access.
-- Minimizing operational costs is a priority, and you wish to avoid API usage fees.
+- You need to work offline or in environments with restricted internet access.
+- Minimizing operational costs is a priority, avoiding API usage fees.
 - Data privacy or security concerns prohibit sending content to external servers for processing.
 - The content to be summarized is well-structured and does not require deep contextual understanding for accurate summarization.
+- You have access to very good computational resources, especially important for processing long audio files or ensuring timely processing.
 
 ### Use `api.py` when:
-
 - The highest quality transcription and summarization are required, leveraging the latest advancements in AI models.
-- Internet connectivity is consistent, and the operational budget can accommodate API usage costs.
+- Consistent internet connectivity is available, and the operational budget can accommodate API usage costs.
 - You are processing complex, nuanced content that benefits from the advanced understanding capabilities of GPT-3.5.
-- Computational resources are limited locally, and offloading processing to the cloud is advantageous.
+- Limited local computational resources make cloud processing a more viable option.
 
 ## Success and Limitations
 
-- **local.py** might struggle with accurately summarizing very long audio files or content with complex nuances, as the summarization models available locally may not always be on par with the latest AI models like GPT-3.5.
-  
-- **api.py** is generally more successful at producing high-quality summaries for a wide range of contents, including lengthy and nuanced discussions. However, this success comes with the trade-offs of API costs and the requirement for internet connectivity.
+- **local.py** might struggle with accurately summarizing very long audio files or content with complex nuances, as the summarization models available locally may not always be on par with the latest AI models like GPT-3.5. The requirement for significant computational resources can be a limiting factor for some users.
+
+- **api.py** is generally more successful at producing high-quality summaries for a wide range of contents, including lengthy and nuanced discussions. This success, however, comes with the trade-offs of API costs and the requirement for internet connectivity.
 
 In summary, the choice between `local.py` and `api.py` should be guided by the specific requirements of your project, including considerations around internet access, computational resources, operational costs, and the complexity of the content being processed.
+
 
