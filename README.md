@@ -49,11 +49,12 @@ FFmpeg is required for audio processing. Install it according to your operating 
 
 ```shell
 sudo apt update && sudo apt install ffmpeg
+```
 
 ## Windows (using Chocolatey)
 ```shell
 choco install ffmpeg
-
+```
 ### Usage
 - Open the Streamlit app in your web browser.
 - Upload an audio file in WAV, MP3, or OGG format.
