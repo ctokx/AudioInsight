@@ -104,5 +104,9 @@ This document outlines the main differences between two approaches for audio tra
 - **api.py** is generally more successful at producing high-quality summaries for a wide range of contents, including lengthy and nuanced discussions. This success, however, comes with the trade-offs of API costs and the requirement for internet connectivity.
 
 In summary, the choice between `local.py` and `api.py` should be guided by the specific requirements of your project, including considerations around internet access, computational resources, operational costs, and the complexity of the content being processed.
+## Running the Application
 
+To run your chosen script, use the command: streamlit run your_preference.py.
+
+If you decide to run the API version, go to the environment variables and set your OpenAI API key.
 
